@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -8,25 +9,17 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        HashSet<Integer> A = new HashSet<>();
-        HashSet<Integer> B = new HashSet<>();
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(1);
+        list.add(3);
+        list.add(1);
+        HashMapCheck hashMapCheck = new HashMapCheck();
+        HashMap<Integer, Integer> map = hashMapCheck.FrequencyCount(list);
 
-        A.add(1);
-        A.add(2);
-        A.add(3);
-        A.add(4);
-
-        B.add(1);
-        B.add(2);
-        B.add(3);
-
-        HashSetCheck h = new HashSetCheck();
-        List<Integer> C = new ArrayList<>();
-        C = h.FindCommon(A, B);
-
-        for(Integer i :  C)
-        {
-            System.out.println(i);
+        for(var key : map.keySet()){
+            System.out.println(key + " : " + map.get(key));
         }
 
     }
